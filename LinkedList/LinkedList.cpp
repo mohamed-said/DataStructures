@@ -49,16 +49,10 @@ void LinkedList::remove_head() {
 }
 
 int LinkedList::get_head() {
-    LLNode *head_node;
-    try {
-        head_node = head;
-        if (head_node == nullptr) {
-            throw ListEmptyException();
-        } else {
-            return head->data;
-        }
-    } catch (ListEmptyException &e) {
+    if (head == nullptr) {
+        throw ListEmptyException();
     }
+    return head->data;
 }
 
 bool LinkedList::lookup(int p_value) {
