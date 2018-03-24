@@ -54,7 +54,7 @@ int LinkedList::get_head() {
         if (head == nullptr) {
             throw ListEmptyException();
         }
-    } catch (ListEmptyException e) {
+    } catch (ListEmptyException &e) {
         cout << "Exception Caught: " << e.what() << std::endl;
     }
 
