@@ -6,19 +6,12 @@
 #define DATASTRUCTURES_LINKEDLIST_H
 
 #include <iostream>
-#include <exception>
 #include "LLNode.h"
 
 using std::cout;
+using std::endl;
 
-class ListEmptyException : public std::exception {
-public:
-    const char* what() const throw() override {
-        return "List Empty Exception";
-    }
-};
-
-class LinkedList : public ListEmptyException {
+class LinkedList {
 
 private:
 

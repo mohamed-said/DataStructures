@@ -3,6 +3,7 @@
 //
 
 #include "LinkedList.h"
+#include "../Exceptions/ListEmptyException.h"
 
 LinkedList::LinkedList() {
     head = nullptr;
@@ -53,7 +54,7 @@ int LinkedList::get_head() {
         if (head == nullptr) {
             throw ListEmptyException();
         }
-    } catch (ListEmptyException &e) {
+    } catch (ListEmptyException e) {
         cout << "Exception Caught: " << e.what() << std::endl;
     }
 

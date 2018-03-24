@@ -4,6 +4,10 @@ project(datastructures)
 set(CMAKE_CXX_STANDARD 11)
 
 add_executable(datastructures
+
+        Exceptions/ListEmptyException.h
+        Exceptions/ListEmptyException.cpp
+
         BST/Node.h
         BST/BST.h
         BST/BST.cpp
