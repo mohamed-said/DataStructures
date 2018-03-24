@@ -20,6 +20,7 @@ private:
 public:
 
     LinkedList();
+    ~LinkedList();
     void insert(int);
     void insert_head(int);
     void remove_head();
@@ -27,6 +28,7 @@ public:
     bool lookup(int);
     void remove_value(int);
     void print();
+    void clear();
 };
 
 

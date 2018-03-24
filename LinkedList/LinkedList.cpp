@@ -49,16 +49,16 @@ void LinkedList::remove_head() {
 }
 
 int LinkedList::get_head() {
-
+    LLNode *head_node;
     try {
-        if (head == nullptr) {
+        head_node = head;
+        if (head_node == nullptr) {
             throw ListEmptyException();
+        } else {
+            return head->data;
         }
     } catch (ListEmptyException &e) {
-        cout << "Exception Caught: " << e.what() << std::endl;
     }
-
-    return head->data;
 }
 
 bool LinkedList::lookup(int p_value) {
@@ -122,4 +122,18 @@ void LinkedList::print() {
         temp = temp->next;
     }
 
+}
+
+void LinkedList::clear() {
+    LLNode *temp;
+    while (head) {
+        temp = head;
+        head = head->next;
+        delete temp;
+    }
+    head = nullptr;
+}
+
+LinkedList::~LinkedList() {
+    clear();
 }
