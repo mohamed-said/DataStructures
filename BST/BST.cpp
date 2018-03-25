@@ -123,3 +123,20 @@ void BST::__insert(Node *&node, int p_value) {
         __insert(node->left, p_value);
     }
 }
+
+void BST::__destroy(Node *node) {
+    if (node != nullptr) {
+        __destroy(node->left);
+        __destroy(node->right);
+        delete node;
+    }
+    root = nullptr;
+}
+
+void BST::clear() {
+    __destroy(root);
+}
+
+BST::~BST() {
+    __destroy(root);
+}

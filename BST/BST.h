@@ -20,15 +20,18 @@ private:
     void __inorder(Node *node);
     void __preorder(Node *node);
     void __postorder(Node *node);
+    void __destroy(Node *node);
 
 public:
     BST();
+    ~BST();
     void insert(int p_value);
     bool lookup(int p_value);
     void remove(int p_value);
     void print_inorder();
     void print_preorder();
     void print_postorder();
+    void clear();
 };
 
 
